@@ -16,7 +16,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
   async function register(ev) {
     console.log(process.env.BACKEND_URL);
     ev.preventDefault();
-    const response = await fetch(`http://localhost:5700/auth/signup`, {
+    const response = await fetch(`https://blog-api-vnos.onrender.com/auth/signup`, {
       method: "POST",
       body: JSON.stringify({ firstName, lastName, username, email , password }),
       headers: { "Content-Type": "application/json" },
