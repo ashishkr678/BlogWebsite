@@ -9,7 +9,7 @@ const Home = ({setIsLoggedIn}) => {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(`https://blog-api-vnos.onrender.com/api/posts/`);
+      const res = await axios.get(`https://blog-api-uupp.onrender.com/api/posts/`);
       setPosts(res.data);
       res.data.length > 0 ? setHasMore(true) : setHasMore(false);
       setIsLoggedIn(true);
