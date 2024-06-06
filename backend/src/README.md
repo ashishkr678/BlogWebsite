@@ -1,0 +1,6 @@
+# Getting started....
+First Connect your mangodb atlas <username> & <password>
+
+# Create Posts using http://localhost:PORT/api/posts/create
+Use the blogsData.json file to create posts...
+
