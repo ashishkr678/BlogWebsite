@@ -5,7 +5,9 @@ const cors = require("cors")
 const app = express()
 
 app.use(express.json())
-app.use(cors());
+app.use(cors(
+    origin: "https://blog-pearl-kappa.vercel.app"
+));
 
 app.get("/",(req,res) => {
     return res.status(200).send({message : "welcome to StudyNotion",status:true})
