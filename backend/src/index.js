@@ -2,13 +2,13 @@ const express = require("express")
 
 const cors = require("cors")
 const { connectDb } = require("./config/db");
+require('dotenv').config()
 
 const app = express()
 
-const PORT = 5700;
-app.listen(PORT, async() => {
+app.listen(`${process.env.PORT}`, async() => {
     await connectDb();
-    console.log("Blog-Website api listing on PORT : ",PORT);
+    console.log("Blog-Website api listing on PORT : ",`${process.env.PORT}`);
 })
 
 app.use(express.json())

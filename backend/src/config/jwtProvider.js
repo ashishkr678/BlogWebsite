@@ -1,14 +1,13 @@
 const jwt = require("jsonwebtoken");
-
-const SECRET_KEY = "jadjkabjfbuqhdjnsdjnajsndmahjshdmah";
+require('dotenv').config({path: 'src/.env'})
 
 const generateToken = (UserId) => {
-  const token = jwt.sign({ UserId }, SECRET_KEY, { expiresIn: "48h" });
+  const token = jwt.sign({ UserId }, `${process.env.SECRET_KEY}`, { expiresIn: "48h" });
   return token;
 };
 
 const getUserIdFromToken = (token) => {
-  const decodedToken = jwt.verify(token, SECRET_KEY);
+  const decodedToken = jwt.verify(token, `${process.env.SECRET_KEY}`);
   return decodedToken.UserId;
 };
 
